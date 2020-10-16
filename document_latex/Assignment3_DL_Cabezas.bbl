@@ -1,0 +1,70 @@
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{Adebiyi2014}
+Ayodele~A. Adebiyi, Aderemi~O. Adewumi, and Charles~K. Ayo.
+\newblock {Stock price prediction using the ARIMA model}.
+\newblock {\em Proceedings - UKSim-AMSS 16th International Conference on
+  Computer Modelling and Simulation, UKSim 2014}, (March):106--112, 2014.
+
+\bibitem{Cho2014}
+Kyunghyun Cho, Bart van Merrienboer, Dzmitry Bahdanau, and Yoshua Bengio.
+\newblock {On the Properties of Neural Machine Translation: Encoder–Decoder
+  Approaches}.
+\newblock {\em CoRR}, abs/1409.1:103--111, 2014.
+
+\bibitem{Chung2014}
+Junyoung Chung, Caglar Gulcehre, KyungHyun Cho, and Yoshua Bengio.
+\newblock {Empirical Evaluation of Gated Recurrent Neural Networks on Sequence
+  Modeling}.
+\newblock {\em CoRR}, abs/1412.3:1--9, 2014.
+
+\bibitem{Hochreiter1997}
+Sepp Hochreiter and J{\"{u}}rgen Schmidhuber.
+\newblock {Long Short-Term Memory}.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
+
+\bibitem{Kara2011}
+Yakup Kara, Melek {Acar Boyacioglu}, and {\"{O}}mer~Kaan Baykan.
+\newblock {Predicting direction of stock price index movement using artificial
+  neural networks and support vector machines: The sample of the Istanbul Stock
+  Exchange}.
+\newblock {\em Expert Systems with Applications}, 38(5):5311--5319, 2011.
+
+\bibitem{Kingma2015}
+Diederik~P. Kingma and Jimmy~Lei Ba.
+\newblock {Adam: A method for stochastic optimization}.
+\newblock {\em 3rd International Conference on Learning Representations, ICLR
+  2015 - Conference Track Proceedings}, pages 1--15, 2015.
+
+\bibitem{Qiu2020}
+Jiayu Qiu, Bin Wang, and Changjun Zhou.
+\newblock {Forecasting stock prices with long-short term memory neural network
+  based on attention mechanism}.
+\newblock {\em PLoS ONE}, 15(1):1--15, 2020.
+
+\bibitem{Saud2020}
+Arjun~Singh Saud and Subarna Shakya.
+\newblock {Analysis of look back period for stock price prediction with RNN
+  variants: A case study on banking sector of NEPSE}.
+\newblock {\em Procedia Computer Science}, 167(2019):788--798, 2020.
+
+\bibitem{Skansi2018}
+Sandro Skansi.
+\newblock {\em {Introduction to Deep Learning: From Logical Calculus to
+  Artificial Intelligence}}.
+\newblock Springer, Cham, Switzerland, 2018.
+
+\bibitem{Wang2003}
+Xiaohua Wang, Paul Kang~Hoh Phua, and Weidong Lin.
+\newblock {Stock Market Prediction Using Neural Networks: Does Trading Volume
+  Help in Short-term Prediction?}
+\newblock {\em Proceedings of the International Joint Conference on Neural
+  Networks}, 4:2438--2442, 2003.
+
+\bibitem{Zhao2020}
+Jinghua Zhao, Dalin Zeng, Shuang Liang, Huilin Kang, and Qinming Liu.
+\newblock {Prediction model for stock price trend based on recurrent neural
+  network}.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing}, 2020.
+
+\end{thebibliography}
