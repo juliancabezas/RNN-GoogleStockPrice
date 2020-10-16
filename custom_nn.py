@@ -1,3 +1,4 @@
+# Import the necssary models to make the neural network
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -19,6 +20,7 @@ class GRU_StockPrice(nn.Module):
         self.num_layers = num_layers
         self.device = device
         
+        # use the GRU class included in pytorch
         self.gru = nn.GRU(input_size = self.input_size, hidden_size = self.hidden_size, num_layers= self.num_layers, batch_first=True)
 
         # End with a fully connected layer that predict a single 
@@ -32,7 +34,6 @@ class GRU_StockPrice(nn.Module):
 
         # Initiate the hiden layers with a tensor full of zeroes
         # h_ has to be a tensor of of shape (num_layers * num_directions, batch, hidden_size)
-        # h_0 = torch.zeros(self.num_layers, batch_size, self.hidden_size).requires_grad_()
         h_0 = torch.zeros(self.num_layers, batch_size, self.hidden_size)
 
         # Apply GRU neural network

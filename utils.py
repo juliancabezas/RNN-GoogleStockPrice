@@ -1,11 +1,12 @@
+# Import necessary libraries
 import numpy as np
 
-# Calculated the root mean squared error
+# Calculation of the root mean squared error
 def rmse(y_true, y_pred):
     return np.sqrt(((y_pred - y_true) ** 2).mean())
 
 
-# We will get the data using a moving window approach
+# Moving window approach for the nextday models
 def moving_window_nextday(data, window_size):
 
     # Empty list were we will store the result
@@ -24,7 +25,8 @@ def moving_window_nextday(data, window_size):
 
     return [x_data, y_data]
 
-# We will get the data using a moving window approach
+# Moving window approach for the intraday model
+# Here the Open price is used as a predictor for th3e low, high and close prices of the same day
 def moving_window_intraday(data, window_size):
 
     # Empty list were we will store the result
@@ -38,7 +40,7 @@ def moving_window_intraday(data, window_size):
 
     data_window  = np.array(data_window)
 
-    # Create the x data, considering the open price of the last day (day inwich we are predicting)
+    # Create the x data, considering the open price of the last day (day in which we are predicting)
     x_data_no_open = data_window[:,:-1,1:]
     x_data_open = data_window[:,1:,0,None]
     x_data = np.concatenate([x_data_open,x_data_no_open], axis=2)
