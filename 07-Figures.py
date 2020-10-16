@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+from matplotlib.ticker import MaxNLocator
 
 # Set the style of the seaborn graphs
 sns.set_style("whitegrid")
@@ -54,9 +54,8 @@ plt.clf()
 # Plot of the trading volume variable
 
 # Make lineplot with the volume variable and save it in the latex document folder
-ax1 = sns.lineplot(x="Timestep", y="Volume",linewidth=1,data=train).set(ylabel='Trading Volume')
-plt.ticklabel_format(style='plain', axis='y')
-plt.savefig('./document_latex/volume.pdf',bbox_inches='tight')
+ax1 = sns.lineplot(x="Timestep", y="Volume",linewidth=1,data=train)
+plt.savefig('./document_latex/prediction_volume.pdf',bbox_inches='tight')
 plt.clf()
 
 
@@ -91,7 +90,9 @@ pred_vol = prediction_nextday_melt[prediction_nextday_melt.variable.isin(['Volum
 pred_vol = pred_vol.rename(columns = {'variable':'Value'})
 pred_vol
 pred_vol['Value'] = pred_vol['Value'].replace({'Volume':'Actual'}).replace({'Volume_pred':'Predicted'})
-sns.lineplot(x="Timestep", y="value", hue="Value",data=pred_vol).set(title="Trading Volume prediction",ylabel='Trading Volume')
+pred_vol = pred_vol.rename(columns = {'value':'Trading Volume'})
+ax7 = sns.lineplot(x="Timestep", y="Trading Volume", hue="Value",data=pred_vol)
+ax7.set_xticklabels(['','1220','','1225','','1230','','1235',''])
 plt.ticklabel_format(style='plain', axis='y')
 plt.savefig('./document_latex/prediction_volume.pdf',bbox_inches='tight')
 plt.clf()
@@ -238,17 +239,17 @@ fig, ax =plt.subplots(1,3)
 
 # Nextday model loss lineplot
 sns.lineplot(x="epoch", y="value", hue="Dataset",data=loss_full_melt[loss_full_melt['Model']=='Nextday'],linewidth = 0.9,alpha=0.7,
-ax=ax[0]).set(title="Nextday",ylabel='Mean Square Error (scaled data)',ylim=(0, 0.1))
+ax=ax[0]).set(title="Nextday",ylabel='Mean Square Error (scaled data)',ylim=(0, 0.75))
 ax[0].get_legend().remove()
 
 # Nextday without volume model loss lineplot
 sns.lineplot(x="epoch", y="value", hue="Dataset",data=loss_full_melt[loss_full_melt['Model']=='Nextday w/o vol.'],linewidth = 0.9,alpha=0.7,
-ax=ax[1]).set(title="Nextday w/o Volume",ylabel='',ylim=(0, 0.1))
+ax=ax[1]).set(title="Nextday w/o Volume",ylabel='',ylim=(0, 0.75))
 ax[1].get_legend().remove()
 
 # Intraday model loss lineplot
 sns.lineplot(x="epoch", y="value", hue="Dataset",data=loss_full_melt[loss_full_melt['Model']=='Intraday'],linewidth = 0.9,alpha=0.7,
-ax=ax[2]).set(title = 'Intraday', ylabel='',ylim=(0, 0.1))
+ax=ax[2]).set(title = 'Intraday', ylabel='',ylim=(0, 0.75))
 
 # Set up and print complete plot
 fig.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=None, hspace=None)
